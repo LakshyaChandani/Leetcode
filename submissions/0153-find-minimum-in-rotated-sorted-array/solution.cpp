@@ -4,7 +4,6 @@ public:
         int low = 0, high = nums.size() - 1, minimum = INT_MAX;
         while(low<=high){
             int mid = (low+high)/2;
-            
             minimum = min(minimum,nums[mid]);
 
             //Left is Sorted
@@ -15,7 +14,6 @@ public:
 
             //Right is Sorted 
             else{
-                minimum = min(minimum,nums[mid]);
                 high = mid-1;
             }
 
