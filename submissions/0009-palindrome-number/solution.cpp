@@ -1,13 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
 class Solution {
 public:
     bool isPalindrome(int x) {
-        if(x<0) return false;
-        long long int rNum = 0, num = x;
-        while(x>0){
-            rNum = (rNum*10) + x%10;
-            x/=10; 
+        string num = to_string(x);
+        int left = 0;
+        int right = num.size() - 1;
+        while(right>left){
+            if (num[left] != num[right]){
+                return false;
+            }
+            left++;
+            right--;
         }
-        if(num == rNum) return true;
-        else{return false;}
+        return true;
     }
 };
